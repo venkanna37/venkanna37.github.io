@@ -1,20 +1,72 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-		#map {
-			width: 100%;
-			height: 100%;
-		}
-	</style>
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.6;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-github {
+  background: black;
+  color: white;
+}
+div.container {
+    width: 100%;
+    height: 100%;
+  }
+
+header, footer {
+    color: white;
+    background-color: #34495E;
+    clear: left;
+    text-align: center;
+}
+
+
+article {
+    padding: 1em;
+    padding-right: 150px;
+    padding-left: 150px;
+    overflow: hidden;
+}
+ul {
+    list-style-image: url('osm.png');
+}
+</style>
+</head>
 <body>
-  <div id="map"></div>
-  <script>
-  var map = L.map('map').setView([16.86143, 81.31709], 18);
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);
-  </script>
+
+<div class="container">
+
+<header>
+   <h1 style="text-align:left;padding:.5em">Venkanna Babu Guthula</h1>
+   <p style="text-align:left"><a href="https://www.facebook.com/venkannababu.guthula" class="fa fa-facebook"></a><a href="https://github.com/venkanna37" class="fa fa-github"></a></p>
+</header>
+<article>
+  <h1><u>3D College Campus</u> 19/12/2017</h1>
+  <img src="threed.gif" style="align:center">
+  <p><a href="https://venkanna37.github.io/3D_college_campus/">Click here </a> to see output<r/p>
+  <p> This is the Internship project when i was studying b.tech in <b>Andhra University College of Engineering, </b>Visakhapatnam. The aim of the project is showing all the buildings in three dimensional view</p>
+</article>
+
+<footer>github pages</footer>
+
+</div>
+
 </body>
 </html>
