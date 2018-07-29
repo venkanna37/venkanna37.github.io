@@ -1,5 +1,4 @@
 body {
-  text-align: center;
   padding-left: 20%;
   padding-right: 20%;
 }
@@ -24,6 +23,22 @@ body {
   background: black;
   color: white;
 }
+.fa-linkedin {
+  background: #2874A6;
+  color: white;
+}
+.fa-twitter {
+  background: #5DADE2;
+  color: white;
+}
+.fa-mapillary {
+    background-image: url("/Images/mapillary.png");
+    background-color: green;
+    }
+.fa-osm {
+        background-image: url("/Images/Openstreetmap_logo.svg");
+        background-color: white;
+        }
 div.container {
     width: 100%;
     height: 100%;
