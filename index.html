@@ -73,31 +73,49 @@
   <img src="Images/threed.gif" style="align:center;width:100%;height:400px">
   <p><a href="https://venkanna37.github.io/3D_college_campus/">Click here </a> to check the output in full screen<r/p>
   <p>
+    This is the Internship project when I was studying b.tech in <b>Andhra University College of Engineering,</b>
+    Visakhapatnam. The aim of the project is showing all the buildings in three dimensional vi<span id="dots">...</span>
+    <span id = "more">ew</br></br>
+      <b>This 3D model is created using tools in QGIS software and OpenStreetMap data </b></br></br>
+      <b>OpenStreetMap Data</b></br></br>
+      OpenStreetMap is built by a community of mappers that contribute and maintain data about roads, Buildings, trails, cafés, railway stations, and much more, all over the world. </br>
+      OpenStreetMap is open data: you are free to use it for any purpose as long as you credit OpenStreetMap and its contributors.</br></br>
+      <b>Tools used in QGIS</b></br></br>
 
-    This is the Internship project when I was studying b.tech in <b>Andhra University College of Engineering, </b>
-    Visakhapatnam. The aim of the project is showing all the buildings in three dimensional view </br></br>
+          <b>OSMDownloader plugin</b></br>
 
-  <b>  This 3D model is created using tools in QGIS software and OpenStreetMap data </b></br></br>
+          This plugin is used for downloading OSM data in college campus area, it is one of the easy way to download the OpenStreetMap data, but it downloads everything in selected area.
+          The format of this data is .osm so we have to convert this data into shapefiles for editing.
+        </br>
+          <b>Openlayer plugin</b><br>
 
-<b>OpenStreetMap Data</b></br></br>
+        This plugin is usefull editing OpenStreetMap data on QGIS desktop using various satellite image layers like Bing, Google, etc. and this plugin has many layers those we can open in QGIS Desktop.
+      </br>
+          <b>Qgis2threejs plugin</b><br>
 
-OpenStreetMap is built by a community of mappers that contribute and maintain data about roads, Buildings, trails, cafés, railway stations, and much more, all over the world. </br>
-
-OpenStreetMap is open data: you are free to use it for any purpose as long as you credit OpenStreetMap and its contributors.</br></br>
-
-<b>Tools used in QGIS</b></br>
-<ol>
-<li><b>OSMDownloader plugin</b></li>
-This plugin is used for downloading OSM data in college campus area, it is one of the easy way to download the OpenStreetMap data, but it downloads everything in selected area.
-The format of this data is .osm so we have to convert this data into shapefiles for editing.
-<li><b>Openlayer plugin</b></li>
-This plugin is usefull editing OpenStreetMap data on QGIS desktop using various satellite image layers like Bing, Google, etc. and this plugin has many layers those we can open in QGIS Desktop.
-<li><b>Qgis2threejs plugin</b></li>
-This plugin is usefull for creating 3D features from shapefile data.
-Using plugin we can create 3D objects like Sphere, Cube, Cylindar, Cone, Cuboid, Triangular Pyramid, Square pyramid and Triangular Prism, we can create these basic shapes using vector data.
-Based on these bacic shapes we can create various 3D features like Buildings, trees, benches, etc.
-This plugin is using threejs library for creating 3D model."'
+          This plugin is usefull for creating 3D features from shapefile data.
+          Using plugin we can create 3D objects like Sphere, Cube, Cylindar, Cone, Cuboid, Triangular Pyramid, Square pyramid and Triangular Prism, we can create these basic shapes using vector data.
+          Based on these bacic shapes we can create various 3D features like Buildings, trees, benches, etc.This plugin is using threejs library for creating 3D model.
+    </span>
   </p>
+  <button onclick="readMore()" id = "myBtn">Read more</button>
+  <script>
+  function readMore() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    }
+    else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  }
+  </script>
 </div>
 
 </article>

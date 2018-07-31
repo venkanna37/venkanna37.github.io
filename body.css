@@ -39,6 +39,9 @@ header, footer {
     text-align: center;
 }
 
+#more {
+  display: none;
+}
 
 article {
     padding: 0.5%;
