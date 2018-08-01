@@ -3,7 +3,7 @@ var map = L.map('map', {
       pseudoFullscreen: false
   }
 }).setView([20.5937, 78.9629], 5);
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+L.tileLayer('https://api.mapbox.com/styles/v1/venkanna37/cjkbhws3rc1yn2rnvmxatun03/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmVua2FubmEzNyIsImEiOiJjamduajFicHQwYzJrMnFvZ2o1NWlrNjVxIn0.4OzLfdbG_MSBuMpFcAoQjg', {
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
@@ -85,3 +85,23 @@ var geojson = L.geoJSON(indiastates, {
 style:style,
 onEachFeature: onEachFeature
 }).addTo(map);
+
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 15, 200, 300, 400, 500, 800, 1200],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;'+grades[i + 1] + '<br>': '+');
+    }
+
+    return div;
+};
+
+legend.addTo(map);

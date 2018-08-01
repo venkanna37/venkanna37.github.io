@@ -16,16 +16,16 @@ body {
 }
 
 .fa-facebook {
-  color: white;
+  color: blue;
 }
 .fa-github {
-  color: white;
+  color: black;
 }
 .fa-linkedin {
-  color: white;
+  color: #1B4F72;
 }
 .fa-twitter {
-  color: white;
+  color: #3498DB;
 }
 div.container {
     width: 100%;
@@ -33,34 +33,33 @@ div.container {
   }
 
 header, footer {
-    color: white;
-    background-color: #808B96;
+    color: black;
+    background-color: #AAB7B8;
     clear: left;
     text-align: center;
 }
 
 .zoom {
-    background-color: #EBEDEF;
+    background-color: #F8F9F9;
     transition: transform .2s; /* Animation */
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    padding: 1%;
     border-style: solid;
+    border-color: #AAB7B8;
 }
 
 .zoom:hover {
     transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-
+}
+.box {
+   padding:10px;
+}
 #more {
   display: none;
 }
 
 article {
-    padding: 0.5%;
-    overflow: hidden;
+  /*  overflow: hidden; */
 
-}
-ul {
-    list-style-image: url('osm.png');
 }
