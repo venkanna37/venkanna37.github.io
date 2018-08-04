@@ -1,6 +1,7 @@
 body {
-  padding-left: 200px;
-  padding-right: 200px;
+  margin: 0 auto;
+  width: 1000px;
+  position: relative;
 }
 .fa {
   padding: 10px;
@@ -35,7 +36,6 @@ div.container {
 header, footer {
     color: black;
     background-color: #AAB7B8;
-    clear: left;
     text-align: center;
 }
 
