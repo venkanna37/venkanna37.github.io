@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Leaflet -->
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+  <link href='dist/leaflet.fullscreen.css' rel='stylesheet' />
+  <script src='dist/Leaflet.fullscreen.min.js'></script>
+
+  <!-- Population density map files -->
+
+  <link href='popdensity.css' rel='stylesheet' />
+
+  <!-- Alert box -->
+
+
+
+  <!-- Body CSS files -->
+
+  <link href = 'body.css' rel= 'stylesheet'>
+
+</head>
+<body>
+
+<div>
+
+<header>
+   <h1 style="text-align:left;padding:.5em">Venkanna Babu Guthula</h1>
+
+   <!-- Icons -->
+   <p style="text-align:right">
+     <a href="https://www.openstreetmap.org/user/venkanna37">
+       <img src="Images/osm.png" background-color:"white"  width="18px" height="18px">
+     </a>
+     <a href="https://www.facebook.com/venkannababu.guthula" class="fa fa-facebook"></a>
+     <a href="https://github.com/venkanna37" class="fa fa-github"></a>
+       <a href="https://www.mapillary.com/app/user/venkanna37">
+         <img src="Images/mapillary.png" background-color:"white" height="18px"  width="18px">
+       </a>
+     <a href="https://www.linkedin.com/in/venkanna37/" class="fa fa-linkedin"></a>
+     <a href="https://twitter.com/venkanna37" class="fa fa-twitter"></a>
+
+
+   </p>
+</header>
+
+<article>
+
+  <!-- POpulation density map -->
+
+  <div class="zoom">
+    <div class="box">
+  <h1><u>India Population Density Map </u> 02/01/2018</h1>
+
+  <div id="map" style="align:center;height:400px"></div>
+  <p>
+    This is a case study of creating colorful interactive choropleth map of india state population density with the help
+    of GeoJson file of india states boundaries and leaflet JavaScript Library and this is inspired from Population density
+    map of United States that was in Leaflet JS examples </br>
+    I took India state boundaries data from ESRI website <a href="https://www.arcgis.com/home/item.html?id=cf9b387de48248a687aafdd4cdff1127">click here</a>
+    to get the shapefile and the population data is collected form wiki
+  </p>
+      <script type="text/javascript" src="indiastates.js"></script>
+      <script type="text/javascript" src="popdensity.js"></script>
+    </div>
+</div>
+
+<!-- 3D college campus -->
+
+<div class="zoom">
+  <div class="box">
+  <h1><u>3D College Campus</u> 19/12/2017</h1>
+  <img src="Images/threed.gif" style="align:center;width:100%;height:400px">
+  <p><a href="https://venkanna37.github.io/3D_college_campus/">Click here </a> to check the output in full screen<r/p>
+  <p>
+    This is the Internship project when I was studying b.tech in <b>Andhra University College of Engineering,</b>
+    Visakhapatnam. The aim of the project is showing all the buildings in three dimensional view<span id="dots">...</span>
+    <span id = "more"></br></br>
+      <b>This 3D model is created using tools in QGIS software and OpenStreetMap data </b></br></br>
+      <b>OpenStreetMap Data</b></br></br>
+      OpenStreetMap is built by a community of mappers that contribute and maintain data about roads, Buildings, trails, cafés, railway stations, and much more, all over the world. </br>
+      OpenStreetMap is open data: you are free to use it for any purpose as long as you credit OpenStreetMap and its contributors.</br></br>
+      <b>Tools used in QGIS</b></br></br>
+
+          <b>OSMDownloader plugin</b></br>
+
+          This plugin is used for downloading OSM data in college campus area, it is one of the easy way to download the OpenStreetMap data, but it downloads everything in selected area.
+          The format of this data is .osm so we have to convert this data into shapefiles for editing.
+        </br>
+          <b>Openlayer plugin</b><br>
+
+        This plugin is usefull editing OpenStreetMap data on QGIS desktop using various satellite image layers like Bing, Google, etc. and this plugin has many layers those we can open in QGIS Desktop.
+      </br>
+          <b>Qgis2threejs plugin</b><br>
+
+          This plugin is usefull for creating 3D features from shapefile data.
+          Using plugin we can create 3D objects like Sphere, Cube, Cylindar, Cone, Cuboid, Triangular Pyramid, Square pyramid and Triangular Prism, we can create these basic shapes using vector data.
+          Based on these bacic shapes we can create various 3D features like Buildings, trees, benches, etc.This plugin is using threejs library for creating 3D model.
+    </span>
+  </p>
+  <button onclick="readMore()" id = "myBtn">Read more</button>
+  <script>
+  function readMore() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more";
+      moreText.style.display = "none";
+    }
+    else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less";
+      moreText.style.display = "inline";
+    }
+  }
+  </script>
+</div>
+</div>
+
+</article>
+<footer>github pages</footer>
+
+</div>
+
+</body>
+</html>

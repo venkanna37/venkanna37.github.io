@@ -1,0 +1,72 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+<style>
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+<body>
+  <div id="map"></div>
+  <script>
+  var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	});
+  var satellite = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        maxZoom: 22,
+        id: 'mapbox.satellite',
+        accessToken: 'pk.eyJ1IjoidmVua2FubmEiLCJhIjoiY2oxa2w0Y3J2MDF2dTJ3cGJzbWhrYTh3ayJ9.BA-1iL9BvWyVhuAZR75mgQ'
+    });
+var gt600 =  L.tileLayer('https://api.mapbox.com/styles/v1/venkanna/cjeojn21ndbrk2smsoglt1reh/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmVua2FubmEiLCJhIjoiY2oxa2w0Y3J2MDF2dTJ3cGJzbWhrYTh3ayJ9.BA-1iL9BvWyVhuAZR75mgQ'
+, {
+maxZoom: 21,
+attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+});
+var poidata =  L.tileLayer('https://api.mapbox.com/styles/v1/venkanna/cjeojwogkfr5a2rpdvk94cmn5/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmVua2FubmEiLCJhIjoiY2oxa2w0Y3J2MDF2dTJ3cGJzbWhrYTh3ayJ9.BA-1iL9BvWyVhuAZR75mgQ'
+, {
+  maxZoom: 21,
+  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+  '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+  'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+  });
+var ny1 = L.marker([40.6249, -73.99155]).bindPopup('New York sample1');
+var ny2 = L.marker([40.76182, -73.78873]).bindPopup('New York sample2');
+var ny3 = L.marker([40.8369, -73.87053]).bindPopup('New York sample3');
+var cg1 = L.marker([42.36698, -87.85046]).bindPopup('Chicago sample1');
+var cg2 = L.marker([41.87921, -87.6721]).bindPopup('Chicago sample2');
+var cg3 = L.marker([41.93638, -88.76816]).bindPopup('Chicago sample3');
+var la1 = L.marker([34.42008, -118.49381]).bindPopup('Los Angeles sample1');
+var la2 = L.marker([34.28062, -118.4297]).bindPopup('Los Angeles sample2');
+var la3 = L.marker([34.06205, -118.27563]).bindPopup('Los Angeles sample3');
+var samplepoints = L.layerGroup([ny1,ny2,ny3,cg1,cg2,cg3,la1,la2,la3]);
+  var map = L.map('map',{
+    center: [39.16, -99.49],
+    zoom: 5,
+    layers:[satellite,samplepoints,poidata,gt600]
+  });
+  var baseMaps ={
+    "osm":osm,
+    "Mapbox Satellite":satellite
+  };
+  var overlayMaps ={
+    "Buildings with Area > 600":gt600,
+    "POI Data":poidata,
+    "Sample Points":samplepoints
+  };
+  L.control.layers(baseMaps,overlayMaps).addTo(map);
+  map.on('click', onMapClick);
+  var popup = L.popup();
+  function onMapClick(e) {
+      popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(map);
+  }
+  map.on('click', onMapClick);
+  </script>
+</body>
+</html>
