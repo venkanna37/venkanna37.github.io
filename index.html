@@ -1,132 +1,304 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<!--<![endif]-->
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- Leaflet -->
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
-  <link href='dist/leaflet.fullscreen.css' rel='stylesheet' />
-  <script src='dist/Leaflet.fullscreen.min.js'></script>
-
-  <!-- Population density map files -->
-
-  <link href='popdensity.css' rel='stylesheet' />
-
-  <!-- Alert box -->
-
-
-
-  <!-- Body CSS files -->
-
-  <link href = 'body.css' rel= 'stylesheet'>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--[if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <![endif]-->
+  <title>VENKANNA</title>
+  <link rel="icon" href="assets/img/venky.jpeg">
+  <!--REQUIRED STYLE SHEETS-->
+  <!-- BOOTSTRAP CORE STYLE CSS -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet" />
+  <!-- FONTAWESOME STYLE CSS -->
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- CUSTOM STYLE CSS -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
 </head>
+
 <body>
-
-<div>
-
-<header>
-   <h1 style="text-align:left;padding:.5em">Venkanna Babu Guthula</h1>
-
-   <!-- Icons -->
-   <p style="text-align:right">
-     <a href="https://www.openstreetmap.org/user/venkanna37">
-       <img src="Images/osm.png" background-color:"white"  width="18px" height="18px">
-     </a>
-     <a href="https://www.facebook.com/venkannababu.guthula" class="fa fa-facebook"></a>
-     <a href="https://github.com/venkanna37" class="fa fa-github"></a>
-       <a href="https://www.mapillary.com/app/user/venkanna37">
-         <img src="Images/mapillary.png" background-color:"white" height="18px"  width="18px">
-       </a>
-     <a href="https://www.linkedin.com/in/venkanna37/" class="fa fa-linkedin"></a>
-     <a href="https://twitter.com/venkanna37" class="fa fa-twitter"></a>
-
-
-   </p>
-</header>
-
-<article>
-
-  <!-- POpulation density map -->
-
-  <div class="zoom">
-    <div class="box">
-  <h1><u>India Population Density Map </u> 02/01/2018</h1>
-
-  <div id="map" style="align:center;height:400px"></div>
-  <p>
-    This is a case study of creating colorful interactive choropleth map of india state population density with the help
-    of GeoJson file of india states boundaries and leaflet JavaScript Library and this is inspired from Population density
-    map of United States that was in Leaflet JS examples </br>
-    I took India state boundaries data from ESRI website <a href="https://www.arcgis.com/home/item.html?id=cf9b387de48248a687aafdd4cdff1127">click here</a>
-    to get the shapefile and the population data is collected form wiki
-  </p>
-      <script type="text/javascript" src="indiastates.js"></script>
-      <script type="text/javascript" src="popdensity.js"></script>
+  <script type="text/javascript" src="assets/js/main.js"></script>
+  <!-- NAV SECTION -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Venkanna Babu Guthula</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#home-sec">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#project">PROJECT</a></li>
+          <li><a href="#places">PLACES</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
     </div>
-</div>
+  </div>
+  <!--END NAV SECTION -->
 
-<!-- 3D college campus -->
 
-<div class="zoom">
-  <div class="box">
-  <h1><u>3D College Campus</u> 19/12/2017</h1>
-  <img src="Images/threed.gif" style="align:center;width:100%;height:400px">
-  <p><a href="https://venkanna37.github.io/3D_college_campus/">Click here </a> to check the output in full screen<r/p>
-  <p>
-    This is the Internship project when I was studying b.tech in <b>Andhra University College of Engineering,</b>
-    Visakhapatnam. The aim of the project is showing all the buildings in three dimensional view<span id="dots">...</span>
-    <span id = "more"></br></br>
-      <b>This 3D model is created using tools in QGIS software and OpenStreetMap data </b></br></br>
-      <b>OpenStreetMap Data</b></br></br>
-      OpenStreetMap is built by a community of mappers that contribute and maintain data about roads, Buildings, trails, cafés, railway stations, and much more, all over the world. </br>
-      OpenStreetMap is open data: you are free to use it for any purpose as long as you credit OpenStreetMap and its contributors.</br></br>
-      <b>Tools used in QGIS</b></br></br>
+  <!--HOME SECTION-->
+  <div id="home-sec">
+    <div class="container"  >
+      <div class="row text-center">
+        <div  class="col-md-12" >
+          <span class="head-main" >Hello, I'M VENKANNA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--END HOME SECTION-->
 
-          <b>OSMDownloader plugin</b></br>
 
-          This plugin is used for downloading OSM data in college campus area, it is one of the easy way to download the OpenStreetMap data, but it downloads everything in selected area.
-          The format of this data is .osm so we have to convert this data into shapefiles for editing.
-        </br>
-          <b>Openlayer plugin</b><br>
+  <!--ABOUT SECTION-->
+  <section id="about"  >
+    <div class="container">
+      <div class="row g-pad-bottom ">
+        <div class="col-md-6 ">
+          <div class="panel-group" id="accordion">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                  <h4 class="panel-title panel-title-adjust">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                      <i class="fa fa-plus"></i> SMALL INTRODUCTION
+                    </a>
+                  </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <h3>About me...</h3>
+                    <p>I am from Buttayagudem village, It is a very small village in Dwaraka Tirumala mandal, West Godavari District, Andhra Pradesh, India.
+                      This village is well mapped in OpenStreetMap and captured Mapillary images. You can visit my village through <a href="https://www.openstreetmap.org/node/5211518222#map=17/16.86139/81.31649"
+                      target="_blank">OpenStreetMap</a>. I completed schooling over there, after that I successfully completed my Diploma in Civil Engineering in SMVM Polytechnic, Tanuku
+                      and B.Tech (Geo-Informatics) in Andhra University College of Engineering, Visakhapatnam. Present I am studying M.Sc (Geo-Informatics) in ITC, University of Twente, Enschede.
+                      This is a Joint Education Programme with Indian Institute of Remote Sensing, Dehradun, India.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h4 class="panel-title panel-title-adjust">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                <i class="fa fa-plus"></i>WORK EXPERIENCE</a></h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <h3>Mapbox Technologies | Bangalore</h3>
+                  <h4> Map-Technician  | September 2017 - August 2018 </h4> </br>
+                  <h3> Equalarcs Technologies | Visakhapatnam</h3>
+                  <h4> GIS Engineer | May 2017 - August 2017 </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h4 class="panel-title panel-title-adjust">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              <i class="fa fa-plus"></i>PROJECTS OUTLINES</a></h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+              <div class="panel-body">
+                <h3><center><strong>| Academics |</strong></center></h3>
+                <h3>Master's Thesis</h3>
+                <h4><b>Automatic road extraction from high resolution satellite imagery using deep learning methods</b></h4> </br>
+                <h3>Bachelor's Thesis</h3>
+                <h4><b>Web-GIS based comparative analysis of rainfall in Thatipudi reservoir catchment area and reservoir capacity<b></h4></br>
+                <h3>Bachelor's Internship</h3>
+                <h4><b>Web-GIS based 3D modelling smart campus system<b></h4>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title panel-title-adjust">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour">
+              <i class="fa fa-plus"></i>ACHIEVEMENTS</a></h4>
+            </div>
+            <div id="collapsefour" class="panel-collapse collapse">
+              <div class="panel-body">
+                <h3>Lot of things to do....</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 ">
+        <h1>Venkanna Babu Guthula</h1>
+        <h4> Student at Uniersity of Twente </h4>
+        <p>I am interested in learning, support open source technologies towards geospatial techologies and passionate about working with geospatial data</p>
+        <a href="https://standardresume.co/saikatmaiti" target="_blank"= class="btn btn-primary btn-lg">DOWNLOAD MY RESUME</a>
+      </div>
+      <div class="row text-center g-pad-bottom">
+        <div class="col-md-12">
+            <h2>MY SKILL SET</h2>
+          <div class="alert-info">
+            <div class="progress progress-adjust">
+              <div class="progress-bar progress-bar-info" style="width: 15%">
+                <div class="skill-div"> Linux </div>
+                <span class="sr-only">15% Complete (danger)</span>
+              </div>
+              <div class="progress-bar progress-bar-success" style="width: 25%">
+                <div class="skill-div">Remote Sensing & GIS </div>
+                <span class="sr-only">25% Complete (success)</span>
+              </div>
+              <div class="progress-bar progress-bar-info" style="width: 25%">
+                <div class="skill-div"> WebGIS</div>
+                <span class="sr-only">25% Complete (success)</span>
+              </div>
+              <div class="progress-bar progress-bar-warning" style="width: 20%">
+                <div class="skill-div"> Programming </div>
+                <span class="sr-only">20% Complete (warning)</span>
+              </div>
+              <div class="progress-bar progress-bar-primary" style="width: 15%">
+                <div class="skill-div"> Database </div>
+                <span class="sr-only">15% Complete (danger)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--END ABOUT SECTION-->
 
-        This plugin is usefull editing OpenStreetMap data on QGIS desktop using various satellite image layers like Bing, Google, etc. and this plugin has many layers those we can open in QGIS Desktop.
-      </br>
-          <b>Qgis2threejs plugin</b><br>
+  <!-- TESTIMONIAL SECTION-->
+  <section id="testimonial" >
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-12">
+          <div id="carousel-example" class="carousel slide" data-ride="carousel">
 
-          This plugin is usefull for creating 3D features from shapefile data.
-          Using plugin we can create 3D objects like Sphere, Cube, Cylindar, Cone, Cuboid, Triangular Pyramid, Square pyramid and Triangular Prism, we can create these basic shapes using vector data.
-          Based on these bacic shapes we can create various 3D features like Buildings, trees, benches, etc.This plugin is using threejs library for creating 3D model.
-    </span>
-  </p>
-  <button onclick="readMore()" id = "myBtn">Read more</button>
-  <script>
-  function readMore() {
-    var dots = document.getElementById("dots");
-    var moreText = document.getElementById("more");
-    var btnText = document.getElementById("myBtn");
-    if (dots.style.display === "none") {
-      dots.style.display = "inline";
-      btnText.innerHTML = "Read more";
-      moreText.style.display = "none";
-    }
-    else {
-      dots.style.display = "none";
-      btnText.innerHTML = "Read less";
-      moreText.style.display = "inline";
-    }
-  }
-  </script>
-</div>
-</div>
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example" data-slide-to="0" class=""></li>
+              <li data-target="#carousel-example" data-slide-to="1" class=""></li>
+              <li data-target="#carousel-example" data-slide-to="2" class=""></li>
+            </ol>
 
-</article>
-<footer>github pages</footer>
+            <div class="carousel-inner">
+              <div class="item">
+                <div class="container center">
+                  <div class="col-md-6 col-md-offset-3 slide-custom">
 
-</div>
+                    <h4><i class="fa fa-quote-left"></i>
+                      Everything is related to everything else, but near things are more related than distant things.
+                      <i class="fa fa-quote-right"></i></h4>
+                      <div class="user-img pull-right">
+                        <img src="assets/img/tobler.jpg" alt="" class="img-u image-responsive img-circle">
+                      </div>
+                      <h5 class="pull-right"><strong class="c-set" >Tobler's first law of Geography</strong></h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="item active left">
+                  <div class="container center">
+                    <div class="col-md-6 col-md-offset-3 slide-custom">
+                      <h4> <i class="fa fa-quote-left"></i> In that Empire, the Art of Cartography attained such Perfection that the map of a single Province occupied the entirety of a City<i class="fa fa-quote-right"></i></h4>
+                      <div class="user-img pull-right">
+                        <img src="assets/img/Borges.jpg" alt="" class="img-u image-responsive">
+                      </div>
+                      <h5 class="pull-right"><strong class="c-set" >Jorge Luis Borges</strong></h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="item next left">
+                  <div class="container center">
+                    <div class="col-md-6 col-md-offset-3 slide-custom">
+                      <h4><i class="fa fa-quote-left"></i>Geographers never get lost. They just do accidental field works.<i class="fa fa-quote-right"></i></h4>
+                      <div class="user-img pull-right">
+                        <img src="assets/img/nicholas.png" alt="" class="img-u image-responsive">
+                      </div>
+                      <h5 class="pull-right"><strong class="c-set">Nicholas Chrisman</strong></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--END TESTIMONIAL SECTION-->
 
-</body>
-</html>
+
+
+    <!--PROJECT SECTION-->
+    <section id="project" >
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6"><img src="assets/img/project1.png" class="img-responsive img-thumbnail" alt="">
+            <p> From <a href="https://www.mdpi.com/2220-9964/5/7/114">A New Approach to Urban Road Extraction Using High-Resolution Aerial Image</a>
+          </div>
+          <div class="col-md-6">
+            <h3><strong>Automatic road extraction from high resolution satellite imagery using deep learning methods</strong></h3>
+            <p>Present I am working on this project, this is my master's thesis, working under the guidence of <a href="https://www.iirs.gov.in/Ashutosh_Kumar_Jha">Prof. Ashutosh Kumar Jha</a>
+            and <a href="https://research.utwente.nl/en/persons/claudio-persello">Prof. Claudio Persello </a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--END PROJECT SECTION-->
+
+
+    <!--PLACES SECTION-->
+    <section id= "places">
+      <h3><b>Where I studied and working...</b></h3>
+      <iframe class = 'cnt' width = "600" height = "600" src= 'assets/js/places.html'></iframe>
+    </section>
+    <!--END PLACES SECTION-->
+
+
+    <!--CONTACT SECTION-->
+    <section id="contact" >
+      <h3>Find me here</h3>
+      <iframe class = 'cnt' width = "600" height = "600" src="assets/js/places.html"></iframe>
+      <div class="add">
+        <i style="font-size:50%;">Address:</i><small> 5-29, BC Colony, Buttayagudem, Gopalapuram post, Dwaraka Tirumala, West Godavari dist, Andhra Pradesh, India, 534425.</small>
+      </div>
+    </section>
+    <!--END CONTACT SECTION-->
+
+
+    <!--Start Social icon-->
+    <a href="https://www.facebook.com/venkannababu.guthula" target="_blank">
+      <img src="http://www.niftybuttons.com/scribble/facebook.png" border="0" margin="1px"></a>
+      <a href="https://twitter.com/venkanna37" target="_blank"><img src="http://www.niftybuttons.com/scribble/twitter.png" border="0" margin="1px"></a>
+      <a href="https://www.linkedin.com/in/venkanna37/" target="_blank">
+        <img src="http://www.niftybuttons.com/scribble/linkedin.png" border="0" margin="1px"></a>
+        <a href="https://www.youtube.com/watch?v=pm5tXld3Fj8" target="_blank">
+          <img src="http://www.niftybuttons.com/scribble/youtube.png" border="0" margin="1px"></a>
+    <!--end social icon-->
+
+    <!--FOOTER SECTION -->
+    <div id="footer">
+      2019| venkanna37.github.io | All rights reserved
+
+    </div>
+    <!-- END FOOTER SECTION -->
+
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP CORE SCRIPT   -->
+    <script src="assets/plugins/bootstrap.min.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+  </body>
+  </html>
