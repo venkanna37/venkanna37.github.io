@@ -19,43 +19,66 @@
         id: 'mapbox.satellite',
         accessToken: 'pk.eyJ1IjoidmVua2FubmEiLCJhIjoiY2oxa2w0Y3J2MDF2dTJ3cGJzbWhrYTh3ayJ9.BA-1iL9BvWyVhuAZR75mgQ'
     });
-var gt600 =  L.tileLayer('https://api.mapbox.com/styles/v1/venkanna/cjeojn21ndbrk2smsoglt1reh/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmVua2FubmEiLCJhIjoiY2oxa2w0Y3J2MDF2dTJ3cGJzbWhrYTh3ayJ9.BA-1iL9BvWyVhuAZR75mgQ'
-, {
-maxZoom: 21,
-attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-});
-var poidata =  L.tileLayer('https://api.mapbox.com/styles/v1/venkanna/cjeojwogkfr5a2rpdvk94cmn5/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmVua2FubmEiLCJhIjoiY2oxa2w0Y3J2MDF2dTJ3cGJzbWhrYTh3ayJ9.BA-1iL9BvWyVhuAZR75mgQ'
-, {
-  maxZoom: 21,
-  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-  '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-  'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-  });
-var ny1 = L.marker([40.6249, -73.99155]).bindPopup('New York sample1');
-var ny2 = L.marker([40.76182, -73.78873]).bindPopup('New York sample2');
-var ny3 = L.marker([40.8369, -73.87053]).bindPopup('New York sample3');
-var cg1 = L.marker([42.36698, -87.85046]).bindPopup('Chicago sample1');
-var cg2 = L.marker([41.87921, -87.6721]).bindPopup('Chicago sample2');
-var cg3 = L.marker([41.93638, -88.76816]).bindPopup('Chicago sample3');
-var la1 = L.marker([34.42008, -118.49381]).bindPopup('Los Angeles sample1');
-var la2 = L.marker([34.28062, -118.4297]).bindPopup('Los Angeles sample2');
-var la3 = L.marker([34.06205, -118.27563]).bindPopup('Los Angeles sample3');
-var samplepoints = L.layerGroup([ny1,ny2,ny3,cg1,cg2,cg3,la1,la2,la3]);
+
+// home
+var permanent = L.marker([40.76182, -73.79973]).bindPopup('Venkanna Babu`s Home')
+var temp = L.marker([40.76182, -73.79973]).bindPopup('IIRS, Dehradun')
+
+//working
+var mapbox = L.marker([40.76182, -73.79973]).bindPopup('Mapbox, Bangalore')
+var equalarcs = L.marker([40.76182, -73.79973]).bindPopup('Equalarcs, Visakhapatnam')
+
+// Schooling
+var sc1 = L.marker([40.6249, -73.99155]).bindPopup('Andhra University College of Engineering, Visakhapatnam');
+var sc2 = L.marker([40.76182, -73.78873]).bindPopup('Indian Institute of Remote Sensing, Dehradun');
+var sc3 = L.marker([40.8369, -73.87053]).bindPopup('SMVM Polytechnic, Tanuku');
+var sc4 = L.marker([42.36698, -87.85046]).bindPopup('Government Polytechnic, Krosur');
+var sc5 = L.marker([41.87921, -87.6721]).bindPopup('ZPH School, Konithiwada');
+var sc6 = L.marker([41.93638, -88.76816]).bindPopup('ZPPOH School, Gunnampalli');
+var sc7 = L.marker([34.42008, -118.49381]).bindPopup('MPE School, Pedajuvvipalem');
+var sc8 = L.marker([34.28062, -118.4297]).bindPopup('CIR Elementary school, Buttayaguden');
+var sc9 = L.marker([34.06205, -118.27563]).bindPopup('ITC, University of Twente, Enschede');
+
+// Travelling
+var tr1 = L.marker([40.76182, -73.79873]).bindPopup('Coorg');
+var tr2 = L.marker([40.76182, -73.79973]).bindPopup('Ooty')
+var tr3 = L.marker([40.76182, -73.79973]).bindPopup('Vellore')
+var tr4 = L.marker([40.76182, -73.79973]).bindPopup('Tirupati')
+var tr5 = L.marker([40.76182, -73.79973]).bindPopup('Simla')
+var tr6 = L.marker([40.76182, -73.79973]).bindPopup('Kasol')
+var tr7 = L.marker([40.76182, -73.79973]).bindPopup('Amsterdam')
+var tr8 = L.marker([40.76182, -73.79973]).bindPopup('Den hage')
+var tr9 = L.marker([40.76182, -73.79973]).bindPopup('lakeee')
+var tr10 = L.marker([40.76182, -73.79973]).bindPopup('Paris')
+var tr11 = L.marker([40.76182, -73.79973]).bindPopup('Zurich')
+var tr12 = L.marker([40.76182, -73.79973]).bindPopup('Frankfurt')
+var tr13 = L.marker([40.76182, -73.79973]).bindPopup('Delhi')
+var tr14 = L.marker([40.76182, -73.79973]).bindPopup('Mysore')
+
+// Study trips
+var st1 = L.marker([40.76182, -73.79973]).bindPopup('KL University, Vijayawada')
+var st1 = L.marker([40.76182, -73.79973]).bindPopup('Heidelberg University, Heidelberg, Germany')
+
+var home_places = L.layerGroup([permanent, temp]);
+var working_places = L.layerGroup([mapbox, equalarcs]);
+var schooling_places = L.layerGroup([sc1, sc2, sc3, sc3, sc4, sc5, sc6, sc7, sc8, sc9]);
+var travelling_places = L.layerGroup([tr1, tr2, tr3, tr4, tr5, tr6, tr7, tr8, tr9, tr10, tr11, tr12, tr13, tr14]);
+
   var map = L.map('map',{
     center: [39.16, -99.49],
     zoom: 5,
-    layers:[satellite,samplepoints,poidata,gt600]
+    layers:[osm,home_places, working_places, schooling_places, travelling_places]
   });
   var baseMaps ={
-    "osm":osm,
+    "OpenStreetMap":osm,
     "Mapbox Satellite":satellite
   };
   var overlayMaps ={
-    "Buildings with Area > 600":gt600,
-    "POI Data":poidata,
-    "Sample Points":samplepoints
+    "Home":home_places,
+    "Working Places": working_places,
+    "Schooling Plcaes": schooling_places,
+    "Travelling Places": travelling_places
+
   };
   L.control.layers(baseMaps,overlayMaps).addTo(map);
   map.on('click', onMapClick);
