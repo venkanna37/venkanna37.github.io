@@ -20,45 +20,66 @@
         accessToken: 'pk.eyJ1IjoidmVua2FubmEiLCJhIjoiY2oxa2w0Y3J2MDF2dTJ3cGJzbWhrYTh3ayJ9.BA-1iL9BvWyVhuAZR75mgQ'
     });
 
+  var collegeIcon = L.icon({
+      iconUrl: '../img/school.png',
+      iconSize:     [32, 50], // size of the icon
+      iconAnchor:   [16, 50], // point of the icon which will correspond to marker's location
+      // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+  var homeIcon = L.icon({
+      iconUrl: '../img/home.png',
+      iconSize:     [32, 50], // size of the icon
+      iconAnchor:   [16, 50], // point of the icon which will correspond to marker's location
+      // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+  var travelIcon = L.icon({
+      iconUrl: '../img/travel.png',
+      iconSize:     [32, 50], // size of the icon
+      iconAnchor:   [16, 50], // point of the icon which will correspond to marker's location
+      // popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
 // home
-var permanent = L.marker([16.86216, 81.31738]).bindPopup('Venkanna Babu`s Home') //
-var temp = L.marker([30.33998, 78.04643]).bindPopup('IIRS, Dehradun') //
+var permanent = L.marker([16.86216, 81.31738], {icon: homeIcon}).bindPopup('Permanent home location');
+var temp = L.marker([30.28349, 77.97452], {icon: homeIcon}).bindPopup('Current home location, Wildlife Institute of India, Dehradun').openPopup();
 
 //working
-var mapbox = L.marker([12.98133, 77.6405]).bindPopup('Mapbox, Bangalore') //
-var equalarcs = L.marker([17.73604, 83.30418]).bindPopup('Equalarcs, Visakhapatnam') //
+var mapbox = L.marker([12.98133, 77.6405]).bindPopup('Mapbox, Bangalore');
+var equalarcs = L.marker([17.73604, 83.30418]).bindPopup('Equalarcs, Visakhapatnam');
 
 // Schooling
-var sc1 = L.marker([17.72675, 83.32104]).bindPopup('Andhra University College of Engineering, Visakhapatnam');//
-var sc2 = L.marker([30.34024, 78.04383]).bindPopup('Indian Institute of Remote Sensing, Dehradun');//
-var sc3 = L.marker([16.75573, 81.67848]).bindPopup('SMVM Polytechnic, Tanuku');
-var sc4 = L.marker([16.54319, 80.13906]).bindPopup('Government Polytechnic, Krosur'); //
-var sc5 = L.marker([16.60014, 81.65612]).bindPopup('ZPH School, Konithiwada');//
-var sc6 = L.marker([16.87511, 81.31627]).bindPopup('ZPPOH School, Gunnampalli'); //
-var sc7 = L.marker([16.60913, 81.65956]).bindPopup('MPE School, Pedajuvvipalem'); //
-var sc8 = L.marker([16.86191, 81.3167]).bindPopup('CSI Elementary school, Buttayaguden'); //
-var sc9 = L.marker([52.22376, 6.88598]).bindPopup('ITC, University of Twente, Enschede'); //
+var sc1 = L.marker([17.72675, 83.32104], {icon: collegeIcon}).bindPopup('Andhra University College of Engineering, Visakhapatnam');
+var sc2 = L.marker([30.34024, 78.04383], {icon: collegeIcon}).bindPopup('Indian Institute of Remote Sensing, Dehradun');
+var sc3 = L.marker([16.75573, 81.67848], {icon: collegeIcon}).bindPopup('SMVM Polytechnic, Tanuku');
+var sc4 = L.marker([16.54319, 80.13906], {icon: collegeIcon}).bindPopup('Government Polytechnic, Krosur');
+var sc5 = L.marker([16.60014, 81.65612], {icon: collegeIcon}).bindPopup('ZPH School, Konithiwada');
+var sc6 = L.marker([16.87511, 81.31627], {icon: collegeIcon}).bindPopup('ZPPOH School, Gunnampalli');
+var sc7 = L.marker([16.60913, 81.65956], {icon: collegeIcon}).bindPopup('MPE School, Pedajuvvipalem');
+var sc8 = L.marker([16.86191, 81.3167], {icon: collegeIcon}).bindPopup('CSI Elementary school, Buttayaguden');
+var sc9 = L.marker([52.22376, 6.88598], {icon: collegeIcon}).bindPopup('ITC, University of Twente, Enschede');
 
+'<img src="../img/annavaram.JPG" height="150px" width="150px"/>'
 // Travelling
-var tr1 = L.marker([12.41977, 75.74116]).bindPopup('Coorg');//
-var tr2 = L.marker([11.40772, 76.6974]).bindPopup('Ooty') //
-var tr3 = L.marker([12.8742, 79.08833]).bindPopup('Vellore')
-var tr4 = L.marker([13.68325, 79.34726]).bindPopup('Tirupati')
-var tr5 = L.marker([31.10469, 77.17192]).bindPopup('Simla')
-var tr6 = L.marker([32.01277, 77.44932]).bindPopup('Tosh') //
-var tr7 = L.marker([52.37246, 4.89286]).bindPopup('Amsterdam') //
-var tr8 = L.marker([52.11304, 4.2778]).bindPopup('Den haage') //
-var tr9 = L.marker([52.73993, 6.11063]).bindPopup('Geithoorn')
-var tr10 = L.marker([48.85387, 2.35794]).bindPopup('Paris')//
-var tr11 = L.marker([47.37975, 8.54118]).bindPopup('Zurich')//
-var tr12 = L.marker([50.12938, 8.61946]).bindPopup('Frankfurt')//
-var tr13 = L.marker([28.61308, 77.22949]).bindPopup('Delhi')//
-var tr14 = L.marker([12.27858, 76.68118]).bindPopup('Mysore')//
-var tr15 = L.marker([16.22605, 76.34803]).bindPopup('Basava Sagar Dam')//
+var tr1 = L.marker([12.41977, 75.74116], {icon: travelIcon}).bindPopup('Coorg');
+var tr2 = L.marker([11.40772, 76.6974], {icon: travelIcon}).bindPopup('Ooty');
+var tr3 = L.marker([12.8742, 79.08833], {icon: travelIcon}).bindPopup('Vellore');
+var tr4 = L.marker([13.68325, 79.34726], {icon: travelIcon}).bindPopup('Tirupati');
+var tr5 = L.marker([31.10469, 77.17192], {icon: travelIcon}).bindPopup('Simla');
+var tr6 = L.marker([32.01277, 77.44932], {icon: travelIcon}).bindPopup('Tosh');
+var tr7 = L.marker([52.37246, 4.89286], {icon: travelIcon}).bindPopup('Amsterdam');
+var tr8 = L.marker([52.11304, 4.2778], {icon: travelIcon}).bindPopup('Den haage');
+var tr9 = L.marker([52.73993, 6.11063], {icon: travelIcon}).bindPopup('Geithoorn');
+var tr10 = L.marker([48.85387, 2.35794], {icon: travelIcon}).bindPopup('Paris');
+var tr11 = L.marker([47.37975, 8.54118], {icon: travelIcon}).bindPopup('Zurich');
+var tr12 = L.marker([50.12938, 8.61946], {icon: travelIcon}).bindPopup('Frankfurt');
+var tr13 = L.marker([28.61308, 77.22949], {icon: travelIcon}).bindPopup('Delhi');
+var tr14 = L.marker([12.27858, 76.68118], {icon: travelIcon}).bindPopup('Mysore');
+var tr15 = L.marker([16.22605, 76.34803], {icon: travelIcon}).bindPopup('Basava Sagar Dam');
+var tr15 = L.marker([17.28263, 82.40553], {icon: travelIcon}).bindPopup('<img src="../img/annavaram.JPG" height="250px" width="300px"/> Annavaram trip with B.Tech friends').openPopup();
 
 // Study trips
-var st1 = L.marker([16.44293, 80.62183]).bindPopup('KL University, Vijayawada')
-var st2 = L.marker([49.41875, 8.67332]).bindPopup('Heidelberg University, Heidelberg, Germany')
+var st1 = L.marker([16.44293, 80.62183]).bindPopup('KL University, Vijayawada');
+var st2 = L.marker([49.41875, 8.67332]).bindPopup('Heidelberg University, Heidelberg, Germany');
 
 var home_places = L.layerGroup([permanent, temp]);
 var working_places = L.layerGroup([mapbox, equalarcs]);
