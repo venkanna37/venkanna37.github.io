@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>News – Venky</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Page-specific styles -->
+  <style>
+    .news-intro {
+      margin-bottom: 1.5rem;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 0;
+      padding: 0.1rem 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .news-date {
+      width: 100px;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .news-text {
+      flex: 1;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    .news-text a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .news-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="publications.html">Publications</a>
+    <a href="news.html" class="active">News</a>
+    <a href="cv.html">Curriculum Vitae</a>
+  </nav>
+</header>
+
+<main>
+    <div class="profile-section">
+    <!-- LEFT SIDE: PHOTO + AUTHOR INFO -->
+    <div class="author-box">
+      <img src="files/photo.jpeg" alt="Your photo">
+
+      <div class="author-content">
+        <h3>Venkanna Babu Guthula</h3>
+        <p>PhD Student</p>
+        <ul class="author-links">
+      <li>
+        <span class="icon">📍</span>
+        Copenhagen, Denmark
+      </li>
+      <li>
+        <span class="icon">✉️</span>
+        <a href="mailto:vegu@di.ku.dk">Email</a>
+      </li>
+      <li>
+        <span class="icon">💼</span>
+        <a href="https://www.linkedin.com/in/venkanna37/" target="_blank">LinkedIn</a>
+      </li>
+      <li>
+        <span class="icon">🐙</span>
+        <a href="https://github.com/venkanna37" target="_blank">GitHub</a>
+      </li>
+      <li>
+        <span class="icon">🎓</span>
+        <a href="https://scholar.google.com/citations?user=LY1bSd8AAAAJ&hl=en&oi=ao" target="_blank">
+          Google Scholar
+        </a>
+      </li>
+    </ul>
+      </div>
+        </div>
+    <div class="profile-text">
+<!--  <p class="news-intro">-->
+<!--    Short updates about what I’m working on, recent events, and upcoming plans.-->
+<!--  </p>-->
+
+  <ul class="news-list">
+
+    <!-- Example entries – edit or replace with your own -->
+
+    <li class="news-item">
+      <div class="news-date">Dec 2025</div>
+      <div class="news-text">
+        I will be attending <a href="https://eurips.cc/" target="_blank">EurIPS Conference</a>, Copenhagen, Denmark, and presenting a poster in <a href="https://sites.google.com/view/reoeurips" target="_blank">REO - EurIPS Workshop </a> on <i>Beyond Building Footprints:
+Probing DINOv3 to Map Roof Material and Geometry</i>
+      </div>
+    </li>
+
+    <li class="news-item">
+      <div class="news-date">Nov 2025</div>
+      <div class="news-text">
+
+        Presented a poster at <a href="https://ais25.eu/" target="_blank">AI in Science Summit 2025</a>, Copenhagen, Denmark. On <i>Risk-assessment of Mosquito-borne Diseases in African Cities</i>
+      </div>
+    </li>
+
+      <li class="news-item">
+      <div class="news-date">Oct 2025</div>
+      <div class="news-text">
+
+        <a href="https://www.sciencedirect.com/science/article/pii/S2666017225001129" target="_blank">Nacala-Roof-Material Segmentation</a> paper accepted in <a href="https://www.sciencedirect.com/journal/science-of-remote-sensing" target="_blank">Science of Remote Sensing Journal</a>.
+      </div>
+    </li>
+
+  </ul>
+    </div>
+</main>
+
+</body>
+</html>
